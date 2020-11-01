@@ -9,7 +9,8 @@ PKG_RELEASE:=1
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
 PKG_SOURCE_PROTO:=svn
-PKG_SOURCE_URL:=svn://github.com/freifunk/openwrt-packages/trunk/contrib/package/community-profiles/files/
+PKG_SOURCE_URL:=https://github.com/freifunk/openwrt-packages/trunk/contrib/package/community-profiles/files/
+PKG_SOURCE_VERSION:=trunk
 
 include $(INCLUDE_DIR)/package.mk
 
