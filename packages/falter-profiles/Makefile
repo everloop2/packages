@@ -37,7 +37,6 @@ define Build/Compile
 endef
 
 define Package/falter-profiles/install
-	$(CP) ./files/* $(1)/
 endef
 
 $(eval $(call BuildPackage,falter-profiles))
