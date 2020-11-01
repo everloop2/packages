@@ -26,7 +26,8 @@ endef
 # only download the profiles from Freifunk/openwrt-packages. This is only pssible with svn.
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
-	cd $(PKG_BUILD_DIR); svn checkout https://github.com/freifunk/openwrt-packages/trunk/contrib/package/community-profiles/files/
+	mkdir -p $(PKG_BUILD_DIR)/files/etc/config/
+	./download_community_profiles.py $(PKG_BUILD_DIR)
 endef
 
 define Build/Configure
