@@ -23,8 +23,10 @@ define Package/falter-profiles/description
   These falter profiles set defaults for various free network/freifunk communities and are used by wizards like ffwizard and meshwizard.
 endef
 
+# only download the profiles from Freifunk/openwrt-packages. This is only pssible with svn.
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
+	cd $(PKG_BUILD_DIR); svn checkout https://github.com/freifunk/openwrt-packages/trunk/contrib/package/community-profiles/files/
 endef
 
 define Build/Configure
