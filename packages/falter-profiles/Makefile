@@ -29,8 +29,6 @@ endef
 
 # only download the profiles from Freifunk/openwrt-packages. This is only pssible with svn.
 define Build/Prepare
-	mkdir -p $(PKG_BUILD_DIR)/files
-	$(CP) $(PKG_BUILD_DIR)/falter-profiles-master/contrib/package/community-profiles/files/* $(PKG_BUILD_DIR)/files/
 endef
 
 define Build/Configure
@@ -40,7 +38,7 @@ define Build/Compile
 endef
 
 define Package/falter-profiles/install
-	$(CP) $(PKG_BUILD_DIR)/files/* $(1)/
+	$(CP) $(PKG_BUILD_DIR)/contrib/package/community-profiles/files/* $(1)/
 endef
 
 $(eval $(call BuildPackage,falter-profiles))
