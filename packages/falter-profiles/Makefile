@@ -29,6 +29,7 @@ endef
 
 # only download the profiles from Freifunk/openwrt-packages. This is only pssible with svn.
 define Build/Prepare
+	$(call Build/Prepare/Default)
 endef
 
 define Build/Configure
