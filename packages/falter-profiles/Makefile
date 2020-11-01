@@ -30,7 +30,7 @@ endef
 # only download the profiles from Freifunk/openwrt-packages. This is only pssible with svn.
 define Build/Prepare
 	$(call Build/Prepare/Default)
-	$(CP) ../falter-profiles-master/contrib/package/community-profiles/files/*
+	$(CP) $(PKG_BUILD_DIR)/../falter-profiles-master/contrib/package/community-profiles/files/* $(PKG_BUILD_DIR)/files/
 endef
 
 define Build/Configure
