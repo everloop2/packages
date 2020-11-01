@@ -8,6 +8,9 @@ PKG_RELEASE:=1
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
+PKG_SOURCE_PROTO:=svn
+PKG_SOURCE_URL:=https://github.com/freifunk/openwrt-packages/trunk/contrib/package/community-profiles/files/
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/falter-profiles
@@ -26,8 +29,6 @@ endef
 # only download the profiles from Freifunk/openwrt-packages. This is only pssible with svn.
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
-	mkdir -p $(PKG_BUILD_DIR)/files/etc/config/
-	./download_community_profiles.py $(PKG_BUILD_DIR)
 endef
 
 define Build/Configure
